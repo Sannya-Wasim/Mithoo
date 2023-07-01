@@ -4,7 +4,7 @@ Welcome to Mithoo Pet Shop, where your furry friends' happiness is our top prior
 
 Mithoo Pet Shop is a full-stack e-commerce website built using the MERN (MongoDB, Express, React, Node.js) stack. Our platform offers a wide range of pet accessories, pet animals, and even provides a platform to adopt pets. We understand the importance of pet welfare, which is why we have implemented features such as reporting missing pets and sending monthly missing and stolen pets reports to registered users using cron jobs.
 
-![Mithoo Pet Shop](path/to/logo.png)
+![Mithoo Pet Shop](frontend/src//assets/images/logo.png)
 
 ## Features
 
