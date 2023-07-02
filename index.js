@@ -8,7 +8,7 @@ const app = express();
 const authController = require("./controllers/authController");
 const productController = require("./controllers/productController");
 const orderController = require("./controllers/orderController");
-const reportController = require('./controllers/reportController');
+const reportController = require("./controllers/reportController");
 
 const customCron = require("./cron/cron");
 
@@ -46,7 +46,6 @@ app.get("*", function (_, res) {
     }
   );
 });
-
 
 app.listen(process.env.PORT, () =>
   console.log(`Server has started successfully...`)
