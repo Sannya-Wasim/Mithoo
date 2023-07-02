@@ -37,16 +37,12 @@ app.use("/api/report", reportController);
 customCron.sendCustomMail();
 
 // serving the frontend
-// Serve static files from the Frontend/dist directory
-app.use(express.static(path.join(__dirname, "Frontend", "dist")));
+// Serve the frontend static files
+app.use(express.static(path.join(__dirname, 'frontend/dist')));
 
-// Handle all other routes
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "Frontend", "dist", "index.html"), function(err) {
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
+// Redirect all other routes to the frontend
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend/dist/index.html'));
 });
 // app.use(express.static(path.join(__dirname + "/Frontend/dist")));
 // app.get("*", function (_, res) {
