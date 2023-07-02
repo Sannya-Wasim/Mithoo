@@ -40,7 +40,7 @@ customCron.sendCustomMail();
 app.use(express.static(path.join(__dirname, "./frontend/dist")));
 
 app.get("*", function (_, res) {
-  res.sendFile(path.join(__dirname, "./frontend/dist/index.html")); // Send the index.html file for all routes
+  res.sendFile(path.join(__dirname, "./Frontend/dist/index.html")); // Send the index.html file for all routes
 });
 
 app.listen(process.env.PORT, () =>
