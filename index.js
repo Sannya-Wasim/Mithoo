@@ -37,10 +37,10 @@ app.use("/api/report", reportController);
 customCron.sendCustomMail();
 
 // serving the frontend
-app.use(express.static(path.join(__dirname, "./Frontend/dist")));
+app.use(express.static(path.join(__dirname + "/Frontend/dist")));
 app.get("*", function (_, res) {
   res.sendFile(
-    path.join(__dirname, "./Frontend/dist/index.html"),
+    path.join(__dirname + "/Frontend/dist/index.html"),
     function (err) {
       res.status(500).send(err);
     }
