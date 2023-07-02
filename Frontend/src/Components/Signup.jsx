@@ -21,7 +21,8 @@ function SignUp() {
     try {
       if (confirmPassword !== password)
         throw new Error("Passwords are not the same");
-      const res = await fetch("http://localhost:5000/auth/signup", {
+      // const res = await fetch(`http://localhost:5000/auth/signup`, {
+        const res = await fetch(`/auth/signup`, {
         headers: {
           "Content-Type": "application/json",
         },

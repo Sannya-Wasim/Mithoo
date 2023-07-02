@@ -14,7 +14,8 @@ const Orders = () => {
   useEffect(() => {
     const getReports = async () => {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/api/report/reports");
+      // const response = await fetch(`http://localhost:5000/api/report/reports`);
+      const response = await fetch(`http://localhost:5000/api/report/reports`);
       const data = await response.json();
 
       if (componentMounted) {

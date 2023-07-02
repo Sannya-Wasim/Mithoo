@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv").config();
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require("path"); // Import the path module
 const app = express();
 
 const authController = require("./controllers/authController");
@@ -10,7 +11,6 @@ const orderController = require("./controllers/orderController");
 const reportController = require('./controllers/reportController');
 
 const customCron = require("./cron/cron");
-const { sendCustomMail } = require("./cron/cron");
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -31,10 +31,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/auth", authController);
 app.use("/api/products", productController);
 app.use("/api/order", orderController);
-app.use("/api/report", reportController)
+app.use("/api/report", reportController);
 
 // Cron job
 customCron.sendCustomMail();
+
+// serving the frontend
+app.use(express.static(path.join(__dirname, "./frontend/dist")));
+
+app.get("*", function (_, res) {
+  res.sendFile(path.join(__dirname, "./frontend/dist/index.html")); // Send the index.html file for all routes
+});
 
 app.listen(process.env.PORT, () =>
   console.log(`Server has started successfully...`)

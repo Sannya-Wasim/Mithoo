@@ -1,4 +1,4 @@
-// import coverPhoto from "src/assets/images/cover.jpg";
+import coverPhoto from "../assets/images/cover.jpg";
 
 const IntroSection = () => {
   return (
@@ -16,7 +16,7 @@ const IntroSection = () => {
           </div>
         </div>
         <div id="cover-photo">
-          <img src="./src/assets/images/cover.jpg" alt="Pet Image" />
+          <img src={coverPhoto} alt="Pet Image" />
         </div>
       </div>
     </section>

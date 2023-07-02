@@ -48,7 +48,8 @@ const Cart = () => {
       };
       // console.log('Order data', orderData)
 
-      const response = await fetch('http://localhost:5000/api/order', {
+      // const response = await fetch('http://localhost:5000/api/order', {
+        const response = await fetch('s/api/order', {
         headers : {
           'Content-Type':'application/json',
         },

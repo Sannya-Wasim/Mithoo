@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import "./Products.css";
-import Navbar from '../elements/NavBar'
+import Navbar from "../elements/NavBar";
 
 function Pets() {
   const [data, setData] = useState([]);
@@ -13,7 +13,8 @@ function Pets() {
   useEffect(() => {
     const getPets = async () => {
       setLoading(true);
-        const response = await fetch("http://localhost:5000/api/products/pets");
+      // const response = await fetch("http://localhost:5000/api/products/pets");
+      const response = await fetch("/api/products/pets");
       if (componentMounted) {
         setData(await response.clone().json());
         setFilter(await response.json());
