@@ -37,11 +37,16 @@ app.use("/api/report", reportController);
 customCron.sendCustomMail();
 
 // serving the frontend
-app.use(express.static(path.join(__dirname, "./frontend/build")));
-
+app.use(express.static(path.join(__dirname, "./Frontend/dist")));
 app.get("*", function (_, res) {
-  res.sendFile(path.join(__dirname, "./Frontend/build/index.html")); // Send the index.html file for all routes
+  res.sendFile(
+    path.join(__dirname, "./Frontend/dist/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
 });
+
 
 app.listen(process.env.PORT, () =>
   console.log(`Server has started successfully...`)
