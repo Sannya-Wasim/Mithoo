@@ -38,11 +38,11 @@ customCron.sendCustomMail();
 
 // serving the frontend
 // Serve the frontend static files
-app.use(express.static(path.join(__dirname, './Frontend/dist')));
+app.use(express.static(path.join(__dirname, '/Frontend/dist')));
 
 // Redirect all other routes to the frontend
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './Frontend/dist/index.html'));
+  res.sendFile(path.join(__dirname, '/Frontend/dist/index.html'));
 });
 // app.use(express.static(path.join(__dirname + "/Frontend/dist")));
 // app.get("*", function (_, res) {
