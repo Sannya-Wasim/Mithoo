@@ -1,28 +1,32 @@
 import Products from "../Components/Products";
 import ServiceComponent from "../Components/ServiceComponent";
 import { Link } from "react-router-dom";
+import petFood from "../assets/images/petFood.png"
+import adoptPet from "../assets/images/adoptPet.jpg"
+import accessories from "../assets/images/accessories.jpg"
+import stolen from "../assets/images/stolen.jpg"
 
 const services = [
   {
-    image: "./src/assets/images/adoptPet.jpg",
+    image: adoptPet,
     title: "Adopt Pets",
     subtitle: "Adorable animals waiting for your adoption",
     type: "pets",
   },
   {
-    image: "./src/assets/images/petFood.png",
+    image: petFood,
     title: "Pet Food",
     subtitle: "Get high quality food for your pets",
     type: "food",
   },
   {
-    image: "./src/assets/images/accessories.jpg",
+    image: accessories,
     title: "Accessories",
     subtitle: "Toys and accessories for your pets care",
     type: "accessories",
   },
   {
-    image: "./src/assets/images/stolen.jpg",
+    image: stolen,
     title: "Stolen or Lost",
     subtitle: "Report for your lost or stolen pets",
     type: "stolen",

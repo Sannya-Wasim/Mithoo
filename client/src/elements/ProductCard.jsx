@@ -1,3 +1,5 @@
+import rightArrow from "../assets/images/right-arrow.png"
+
 const ProductCard = ({ product }) => {
   return (
     <figure className="product-card">
@@ -7,7 +9,7 @@ const ProductCard = ({ product }) => {
       <div className="arrow-button">
         <a href="">Get Now</a>
         <img
-          src="src/assets/images/right-arrow.png"
+          src={rightArrow}
           alt="arrow"
           className="right-arrow"
         />

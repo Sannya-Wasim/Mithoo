@@ -1,18 +1,19 @@
 import ProductCard from "./ProductCard";
+import petFood from "../assets/images/petFood.png"
 
 var products = [
   {
-    image: "src/assets/images/petFood.png",
+    image: petFood,
     name: "Pet Food",
     description: "Pet Food Description",
   },
   {
-    image: "src/assets/images/petFood.png",
+    image: petFood,
     name: "Pet Food",
     description: "Pet Food Description",
   },
   {
-    image: "src/assets/images/petFood.png",
+    image: petFood,
     name: "Pet Food",
     description: "Pet Food Description",
   },

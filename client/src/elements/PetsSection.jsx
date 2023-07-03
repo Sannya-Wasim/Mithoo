@@ -1,19 +1,20 @@
 import PetCard from "./PetCard";
 import Products from "../Components/Products";
+import adoptPet from "../assets/images/adoptPet.jpg"
 
 var pets = [
   {
-    image: "src/assets/images/adoptPet.jpg",
+    image: adoptPet,
     name: "Tom",
     description: "A blue and white naughty cat",
   },
   {
-    image: "src/assets/images/adoptPet.jpg",
+    image: adoptPet,
     name: "Tom",
     description: "A blue and white naughty cat",
   },
   {
-    image: "src/assets/images/adoptPet.jpg",
+    image: adoptPet,
     name: "Tom",
     description: "A blue and white naughty cat",
   },
