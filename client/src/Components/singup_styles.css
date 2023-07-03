@@ -103,6 +103,16 @@
     margin-left: 50px;
     width: 60vh;
   }
+
+  .error{
+    width : 20rem;
+    padding : 1rem;
+    background-color : var(--primaryColor);
+    color : white;
+    border : 2px solid var(--primaryColor);
+    border-radius : 3px;
+    margin : auto;
+  }
   
   #checkbox {
     width: 50%;

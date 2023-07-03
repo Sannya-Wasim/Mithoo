@@ -80,7 +80,8 @@ function Pets() {
               <div key={pet.id} className="productCard">
                 <img src={pet.image} alt={pet.title} />
                 <div>
-                  <h5>{pet.title.substring(0, 12)}...</h5>
+                <h3>{pet.title}</h3>
+                  <p>{pet.description.substring(0,20)}</p>
                   <p style={{ marginBottom: "1rem" }}>${pet.price}</p>
                   <NavLink className="productLink" to={`/pets/${pet._id}`}>
                     Buy Now

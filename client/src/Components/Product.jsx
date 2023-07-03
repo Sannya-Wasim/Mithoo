@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "./Product.css";
 import Navbar from "../elements/NavBar";
 import { useDispatch } from "react-redux";
-import {addToCart} from "../redux/cartSlice.js";
+import { addToCart } from "../redux/cartSlice.js";
 
 const Product = () => {
   const { id } = useParams();
@@ -44,9 +44,20 @@ const Product = () => {
             <p>{product.description}</p>
             <br />
             <h3>Price: ${product.price}</h3>
+            <p>No. of units sold{product.rating.count}</p>
             <br />
             <br />
-            <Link onClick={() => handleAddToCart(product)} to='/products'>
+            <Link
+              onClick={() => handleAddToCart(product)}
+              to="/products"
+              style={{
+                border: "2px solid black",
+                borderRadius: "3px",
+                padding: "0.5rem",
+                backgroundColor: "black",
+                color: "white",
+              }}
+            >
               Add to Cart
             </Link>
           </div>

@@ -1,35 +1,28 @@
 import Products from "../Components/Products";
-import ServiceComponent from "../Components/ServiceComponent";
 import { Link } from "react-router-dom";
-import petFood from "../assets/images/petFood.png"
-import adoptPet from "../assets/images/adoptPet.jpg"
-import accessories from "../assets/images/accessories.jpg"
-import stolen from "../assets/images/stolen.jpg"
+import petFood from "../assets/images/petFood.png";
+import adoptPet from "../assets/images/adoptPet.jpg";
+import accessories from "../assets/images/accessories.jpg";
+import stolen from "../assets/images/stolen.jpg";
 
 const services = [
-  {
-    image: adoptPet,
-    title: "Adopt Pets",
-    subtitle: "Adorable animals waiting for your adoption",
-    type: "pets",
-  },
-  {
-    image: petFood,
-    title: "Pet Food",
-    subtitle: "Get high quality food for your pets",
-    type: "food",
-  },
   {
     image: accessories,
     title: "Accessories",
     subtitle: "Toys and accessories for your pets care",
-    type: "accessories",
+    type: "products",
+  },
+  {
+    image: adoptPet,
+    title: "Buy Pets",
+    subtitle: "Adorable animals waiting for a new home",
+    type: "pets",
   },
   {
     image: stolen,
-    title: "Stolen or Lost",
+    title: "Lost Pets",
     subtitle: "Report for your lost or stolen pets",
-    type: "stolen",
+    type: "reports",
   },
 ];
 
@@ -42,8 +35,17 @@ const ServicesSection = () => {
           {services.map((service) => {
             return (
               // <Link to="">
-              <Link href={<Products type={service.type} />}>
-                <ServiceComponent service={service} />
+              <Link to={service.type}>
+                <figure id="service-element">
+                  <img
+                    style={{ width: "10rem", height: "10rem" }}
+                    src={service.image}
+                  />
+                  <figcaption>
+                    <h3>{service.title}</h3>
+                    <p>{service.subtitle}</p>
+                  </figcaption>
+                </figure>
               </Link>
               // </Link>
             );

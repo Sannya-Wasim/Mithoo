@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "./NavBar";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import report from "../assets/images/report.png";
 
 function Stolen() {
@@ -128,7 +128,7 @@ function Stolen() {
 
                 <div className="labels">
                   <div id="btn">
-                    <button onClick={handleSubmitReport}>Submit</button>
+                    <Link onClick={handleSubmitReport} to='/reports'>Submit</Link>
                   </div>
                 </div>
               </div>

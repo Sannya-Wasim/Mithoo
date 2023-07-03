@@ -20,7 +20,7 @@
 
 .productCard {
   width: 200px;
-  height: 350px;
+  height: 396px;
   margin: 1rem;
   text-align: center;
   padding-top: 1.5rem;
@@ -34,9 +34,13 @@
 }
 
 .productCard > img {
-  height: 150px;
-  width: 37%;
+  height: 55%;
+  width: 86%;
   border-radius: 10px;
+}
+
+.ratings{
+  margin-bottom : 1rem;
 }
 
 .productLink {

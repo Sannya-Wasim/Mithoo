@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import "./Products.css";
-import Navbar from '../elements/NavBar'
+import Navbar from "../elements/NavBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -48,6 +50,26 @@ function Products() {
     );
   };
 
+  const renderStars = (rating) => {
+    const filledStars = Math.floor(rating); // Number of filled stars
+    const hasHalfStar = rating % 1 !== 0; // Check if there is a half star
+
+    const starStyle = {
+      color: "gold",
+      marginRight: "2px",
+    };
+
+    const stars = [];
+    for (let i = 0; i < filledStars; i++) {
+      stars.push(<FontAwesomeIcon icon={faStar} style={starStyle} />);
+    }
+    if (hasHalfStar) {
+      stars.push(<FontAwesomeIcon icon={faStarHalfAlt} style={starStyle} />);
+    }
+
+    return stars;
+  };
+
   const filterProduct = (cat) => {
     const updatedList = data.filter((x) => x.category === cat);
     setFilter(updatedList);
@@ -60,16 +82,10 @@ function Products() {
           <button class="Button" onClick={() => setFilter(data)}>
             All Products
           </button>
-          <button
-            class="Button"
-            onClick={() => filterProduct("Food")}
-          >
+          <button class="Button" onClick={() => filterProduct("Food")}>
             Food
           </button>
-          <button
-            class="Button"
-            onClick={() => filterProduct("Toys")}
-          >
+          <button class="Button" onClick={() => filterProduct("Toys")}>
             Toys
           </button>
           <button class="Button" onClick={() => filterProduct("Beds")}>
@@ -86,9 +102,14 @@ function Products() {
               <div key={product.id} className="productCard">
                 <img src={product.image} alt={product.title} />
                 <div>
-                  <h5>{product.title.substring(0, 12)}...</h5>
+                  <h3>{product.title}</h3>
+                  <p>{product.description.substring(0,20)}</p>
                   <p style={{ marginBottom: "1rem" }}>${product.price}</p>
-                  <NavLink className="productLink" to={`/products/${product._id}`}>
+                  <div className="ratings">{renderStars(product.rating.rate)}</div>
+                  <NavLink
+                    className="productLink"
+                    to={`/products/${product._id}`}
+                  >
                     Buy Now
                   </NavLink>
                 </div>

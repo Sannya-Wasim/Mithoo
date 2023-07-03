@@ -127,7 +127,7 @@ function SignUp() {
                 </div>
               </div>
             </form>
-            {error && <div>Wrong Credentials! Try different ones.</div>}
+            {error && <div className="error">Wrong Credentials! Try different ones.</div>}
           </div>
         </section>
       </section>

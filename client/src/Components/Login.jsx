@@ -70,6 +70,12 @@ function Login() {
             <hr />
             <form action="">
               <div className="form">
+              {
+              error && 
+              <div className="error">
+                Wrong Credentials! Try different ones.
+              </div>
+            }
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -99,12 +105,7 @@ function Login() {
               <div><p>Haven't registered yet? Click here to <Link to='/signup'>Sign Up!</Link></p></div>
 
             </form>
-            {
-              error && 
-              <div className="error">
-                Wrong Credentials! Try different ones.
-              </div>
-            }
+            
           </div>
         </section>
       </section>

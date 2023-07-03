@@ -49,7 +49,7 @@ const Cart = () => {
       // console.log('Order data', orderData)
 
       // const response = await fetch('http://localhost:5000/api/order', {
-        const response = await fetch('s/api/order', {
+        const response = await fetch('/api/order', {
         headers : {
           'Content-Type':'application/json',
         },
@@ -106,7 +106,7 @@ const Cart = () => {
               <div className="item-details">
                 <ul>
                   <li>
-                    <img src={item.image} />
+                    <img src={item.image} className="summary-image" />
                   </li>
                   <li>
                     <h4>{item.title}</h4>
@@ -167,7 +167,8 @@ const Cart = () => {
               </p>
             </div>
           </div>
-          <button className="checkout-button" onClick={()=>handleCheckout(cartItems)}>Checkout</button>
+          <button className="checkout-button">Clear Cart</button>
+          <button className="checkout-button" onClick={()=>handleCheckout(cartItems)}>Checkout</button>          
         </div>
       </div>
     </div>

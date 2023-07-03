@@ -208,7 +208,6 @@ a {
 }
 .pet-card {
   padding: 1rem;
-  flex-basis: 33%;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -216,6 +215,8 @@ a {
   margin: 1rem;
   transition: background-color 0.2s, border 0.2s;
   border-radius: 10px;
+  height : 25rem;
+  width : 17rem;
 }
 .pet-card:hover {
   padding-top: 1rem;
@@ -223,8 +224,8 @@ a {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .pet-card > img {
-  height: 250px;
-  width: 100%;
+  height: 10rem;
+  width: 10rem;
   border-radius: 10px;
 }
 .right-arrow {
@@ -263,28 +264,32 @@ a {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  gap: 2%;
   padding: 1rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .product-card {
   padding: 1rem;
-  flex-basis: 31%;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  border: 2px solid var(--primaryColor);
-  transition: background-color 0.5s, border 0.5s;
+  margin: 1rem;
+  transition: background-color 0.2s, border 0.2s;
   border-radius: 10px;
-  margin-bottom: 1rem;
+  height : 25rem;
+  width : 17rem;
 }
 .product-card > img {
-  height: 250px;
-  width: 100%;
+  height: 10rem;
+  width: 10rem;
   border-radius: 10px;
+}
+
+.product-card:hover {
+  padding-top: 1rem;
+  border: 2px solid black;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 /* Stolen Pets Section */
@@ -299,4 +304,14 @@ a {
   align-items: center;
   gap: 5px;
   padding: 1.5rem;
+}
+
+#btn {
+  background-color: rgba(14,184,240,.863);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  height: 36px;
+  width: 50%;
+
 }
