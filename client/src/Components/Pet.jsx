@@ -12,11 +12,15 @@ const Pet = () => {
 
   useEffect(() => {
     const fetchPet = async () => {
-      // const response = await fetch(`http://localhost:5000/api/products/pets/${id}`);
+      try {
+        // const response = await fetch(`http://localhost:5000/api/products/pets/${id}`);
       const response = await fetch(`/api/products/pets/${id}`);
       const petData = await response.json();
       setPet(petData);
       // console.log(pet);
+      } catch (error) {
+        throw new Error
+      }
     };
 
     fetchPet();
