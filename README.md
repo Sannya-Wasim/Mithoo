@@ -36,6 +36,6 @@ The project follows the MVC (Model-View-Controller) architecture for organizing 
 - `middlewares`: Custom middlewares for authentication, error handling, etc.
 - `utils`: Utility functions and helper modules.
 
-Join our pet-loving community and experience a seamless shopping experience while making a positive impact in the lives of pets and their owners. Visit our website at 🌐 [www.mithoo.com.pk](https://www.mithoo.com.pk) to explore our offerings and be a part of our mission!
+Join our pet-loving community and experience a seamless shopping experience while making a positive impact in the lives of pets and their owners. Visit our website at 🌐 [www.mithoo.com.pk](https://mithoo.cyclic.app/) to explore our offerings and be a part of our mission!
 
 
