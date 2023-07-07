@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import petpic from "../assets/images/petpic.jpg";
+// import petpic from "https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 import NavBar from "../elements/NavBar";
 
 const About = () => {
@@ -12,14 +12,14 @@ const About = () => {
       </div>
       <div className="About">
         <div className="left">
-          <img src={petpic} alt="Picture not found" />
+          <img src='https://images.pexels.com/photos/8030852/pexels-photo-8030852.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' alt="Picture not found" />
         </div>
         <div className="right">
           <div>
             <h1>About Us</h1>
           </div>
 
-          <p style={{marginTop : "0.2rem"}}>
+          <p>
             <b>Mithoo</b> is an online store for pet lovers, which provides the
             facility of buying pets and their accessories online to its
             customers. Our cusomers can also report if their pets are missing or

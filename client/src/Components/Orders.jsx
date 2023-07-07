@@ -3,24 +3,27 @@ import "./Cart.css";
 import Navbar from "../elements/NavBar";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
-import {useSelector} from 'react-redux';
+import { useSelector } from "react-redux";
 
 const Orders = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
-  const username = useSelector((state)=>state.user.username)
-  
+  const username = useSelector((state) => state.user.username);
 
   useEffect(() => {
     const getOrders = async () => {
-      setLoading(true);
-      const response = await fetch("http://localhost:5000/api/order/orders");
-      const data = await response.json();
+      try {
+        setLoading(true);
+        const response = await fetch("http://localhost:5000/api/order/orders");
+        const data = await response.json();
 
-      if (componentMounted) {
-        setData(data);
-        setLoading(false);
+        if (componentMounted) {
+          setData(data);
+          setLoading(false);
+        }
+      } catch (error) {
+        throw new Error();
       }
     };
 
@@ -52,25 +55,25 @@ const Orders = () => {
   const ShowOrders = () => {
     return (
       <>
-        {data.map((order) =>
-          order.user === username && (
-            <div className="item-details" key={order._id}>
-              <ul>
-                <li>
-                  <p>{order.items[0].product}</p>
-                </li>
-                <li>{order.items[0].quantity}</li>
-                <li>{order.createdAt}</li>
-                <li>${order.totalPrice}</li>
-              </ul>
-              <hr />
-            </div>
-          )
+        {data.map(
+          (order) =>
+            order.user === username && (
+              <div className="item-details" key={order._id}>
+                <ul>
+                  <li>
+                    <p>{order.items[0].product}</p>
+                  </li>
+                  <li>{order.items[0].quantity}</li>
+                  <li>{order.createdAt}</li>
+                  <li>${order.totalPrice}</li>
+                </ul>
+                <hr />
+              </div>
+            )
         )}
       </>
     );
   };
-  
 
   return (
     <>
@@ -104,7 +107,7 @@ const Orders = () => {
                 </ul>
                 <hr />
               </div>
-              <ShowOrders/>
+              <ShowOrders />
             </div>
           </div>
         </div>
